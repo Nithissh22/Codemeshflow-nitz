@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cmf-bg: #080808;
+  --color-cmf-surface: #0f0e0c;
+  --color-cmf-gold: #C9A84C;
+  --color-cmf-gold-light: #E8C96A;
+  --color-cmf-gold-muted: #7a6a3a;
+  --color-cmf-text: #EDE8DA;
+  --color-cmf-text-muted: #7a7468;
+  --color-cmf-border: rgba(201, 168, 76, 0.12);
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --cmf-bg: #080808;
+  --cmf-surface: #0f0e0c;
+  --cmf-gold: #C9A84C;
+  --cmf-gold-light: #E8C96A;
+  --cmf-gold-muted: #7a6a3a;
+  --cmf-text: #EDE8DA;
+  --cmf-text-muted: #7a7468;
+  --cmf-border: rgba(201, 168, 76, 0.12);
+}
+
+@layer base {
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+html {
+  background-color: var(--cmf-bg);
+  color: var(--cmf-text);
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--cmf-bg);
+  color: var(--cmf-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: none; /* Custom cursor */
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--cmf-gold);
+  color: var(--cmf-bg);
+}
+
+/* Typography Utilities */
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.heading-display-italic {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Base resets for Next.js image components to prevent selection etc if needed */
+img {
+  user-select: none;
+}
