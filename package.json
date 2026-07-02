@@ -24,7 +24,9 @@
     "react": "latest",
     "react-dom": "latest",
     "tailwind-merge": "latest",
-    "three": "^0.185.0"
+    "three": "^0.185.0",
+    "next-sanity": "latest",
+    "sanity": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.1",
